@@ -1,1 +1,1 @@
-This is text repository
+This is text repository.
