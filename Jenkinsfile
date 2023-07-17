@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'docker build -t jaydox .'
+                    sh 'sudo docker build -t jaydox .'
                 }
             }
         }
