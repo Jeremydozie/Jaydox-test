@@ -21,7 +21,7 @@ RUN apt-get update -y && \
 
 WORKDIR /app
 
-COPY /app-requirements.txt /app
+COPY requirements.txt /app
 
 
 
