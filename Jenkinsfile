@@ -40,7 +40,7 @@ pipeline {
         stage('Build and Tag Image') {
             steps {
                 script {
-                app = docker.build("210624171893.dkr.ecr.us-east-1.amazonaws.com/jaydox:${BUILD_NUMBER}")
+                app = sudo docker.build("210624171893.dkr.ecr.us-east-1.amazonaws.com/jaydox:${BUILD_NUMBER}")
                 }
             }
         }
