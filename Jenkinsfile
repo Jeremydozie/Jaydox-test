@@ -15,7 +15,7 @@ pipeline {
         }
 
 
-    stage('Push image to ECR...') {
+        stage('Push image to ECR...') {
             steps {
                 script {
                 docker.withRegistry("https://210624171893.dkr.ecr.us-east-1.amazonaws.com/jaydox", "ecr:us-east-1:aws-access-jenkins") {
