@@ -21,7 +21,7 @@ pipeline {
                 docker.withRegistry("https://210624171893.dkr.ecr.us-east-1.amazonaws.com/jaydox", "ecr:us-east-1:aws-access-jenkins") {
 //                sh 'docker tag jaydox:$DOCKER_IMAGE_TAG $ECR_REPOSITORY:latest'
                 sh 'docker tag jaydox:latest 210624171893.dkr.ecr.us-east-1.amazonaws.com/jaydox:latest'
-                sh 'docker push 210624171893.dkr.ecr.us-east-1.amazonaws.com/jaydox:latest'
+                sh 'docker push 210624171893.dkr.ecr.us-east-1.amazonaws.com/jaydox:latestoo'lll
 //                sh 'docker push $ECR_REPOSITORY:latest'
                 }
                 }
