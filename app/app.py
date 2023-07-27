@@ -18,7 +18,7 @@ def hello_world():
 
     """Print Hello"""
 
-    return "Hello from Flask app deployed by Jaydox!"
+    return "Hello from Flask app deployed by Mekadox!"
 
 
 
