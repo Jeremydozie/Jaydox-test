@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
-                    snykinstallation: 'snyk@latest',
+                    snykInstallation: 'snyk@latest',
                     snykTokenId: 'synk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
-                    snykinstallation: 'snyk@latest',
+                    snykInstallation: 'snyk@latest',
                     snykTokenId: 'synk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
@@ -49,7 +49,7 @@ pipeline {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
-                    snykinstallation: 'snyk@latest',
+                    snykInstallation: 'snyk@latest',
                     snykTokenId: 'synk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
@@ -64,7 +64,7 @@ pipeline {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
-                    snykinstallation: 'snyk@latest',
+                    snykInstallation: 'snyk@latest',
                     snykTokenId: 'synk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
