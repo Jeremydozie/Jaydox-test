@@ -14,7 +14,7 @@ pipeline {
             }
         } 
 
-        stage('Run Snyk 0pen Source scan...') {
+        stage('Run Snyk 0pen Source scan') {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        stage('Run Snyk Code Scan...') {
+        stage('Run Snyk Code Scan') {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
@@ -45,7 +45,7 @@ pipeline {
         }
 
         
-        stage('Run Snyk IAC Scan...') {
+        stage('Run Snyk IAC Scan') {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
@@ -60,7 +60,7 @@ pipeline {
             }
         }
 
-        stage('Run Snyk Container Scan...') {
+        stage('Run Snyk Container Scan') {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
