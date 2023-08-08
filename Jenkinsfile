@@ -19,7 +19,7 @@ pipeline {
                 echo 'Testing...' 
                 snykSecurity(
                     snykInstallation: 'snyk@latest',
-                    snykTokenId: 'synk-token',
+                    snykTokenId: 'snyk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
                     additionalArguments: '--all-projects --debug'
@@ -34,7 +34,7 @@ pipeline {
                 echo 'Testing...' 
                 snykSecurity(
                     snykInstallation: 'snyk@latest',
-                    snykTokenId: 'synk-token',
+                    snykTokenId: 'snyk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
                     additionalArguments: '--code -debug'
@@ -50,7 +50,7 @@ pipeline {
                 echo 'Testing...' 
                 snykSecurity(
                     snykInstallation: 'snyk@latest',
-                    snykTokenId: 'synk-token',
+                    snykTokenId: 'snyk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
                     additionalArguments: '--iac --report -debug'
@@ -65,7 +65,7 @@ pipeline {
                 echo 'Testing...' 
                 snykSecurity(
                     snykInstallation: 'snyk@latest',
-                    snykTokenId: 'synk-token',
+                    snykTokenId: 'snyk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
                     additionalArguments: '--container debian -debug'
