@@ -14,7 +14,7 @@ pipeline {
             }
         } 
 
-        stage('Run Snyk 0pen Source scan...') {
+        stage('Run Snyk 0pen Source scan') {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        stage('Run Snyk Code Scan...') {
+        stage('Run Snyk Code Scan') {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
@@ -45,7 +45,7 @@ pipeline {
         }
 
         
-        stage('Run Snyk IAC Scan...') {
+        stage('Run Snyk IAC Scan') {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
@@ -60,7 +60,7 @@ pipeline {
             }
         }
 
-        stage('Run Snyk Container Scan...') {
+        stage('Run Snyk Container Scan') {
             steps {
                 echo 'Testing...' 
                 snykSecurity(
@@ -74,55 +74,7 @@ pipeline {
                 
             }
         }
-
-        stage('Run Snyk Code Scan...') {
-            steps {
-                echo 'Testing...' 
-                snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: 'synk-token',
-                    failOnIssues: false,
-                    monitorProjectOnBuild: true,
-                    additionalArguments: '--code -debug'
-
-                )
-                
-            }
-        }
-
         
-        stage('Run Snyk IAC Scan...') {
-            steps {
-                echo 'Testing...' 
-                snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: 'synk-token',
-                    failOnIssues: false,
-                    monitorProjectOnBuild: true,
-                    additionalArguments: '--iac --report -debug'
-
-                )
-                
-            }
-        }
-
-        stage('Run Snyk Container Scan...') {
-            steps {
-                echo 'Testing...' 
-                snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: 'synk-token',
-                    failOnIssues: false,
-                    monitorProjectOnBuild: true,
-                    additionalArguments: '--container debian -debug'
-
-                )
-                
-            }
-        }
-
-
-
 
         stage('Push image to ECR...') {
             steps {
