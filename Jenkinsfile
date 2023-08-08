@@ -74,8 +74,7 @@ pipeline {
                 
             }
         }
-
-
+        
 
         stage('Push image to ECR...') {
             steps {
@@ -91,5 +90,3 @@ pipeline {
         }
     }
 }
-
-
