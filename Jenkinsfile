@@ -14,21 +14,22 @@ pipeline {
             }
         } 
 
-        stage('Run Snyk 0pen Source scan') {
-            steps {
-                echo 'Testing...' 
-                snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: 'snyk-token',
-                    failOnIssues: false,
-                    monitorProjectOnBuild: true,
-                    additionalArguments: '--prune-repeated-subdependencies'
+//        stage('Run Snyk 0pen Source scan') {
+//            steps {
+//                echo 'Testing...' 
+//                snykSecurity(
+//                    snykInstallation: 'snyk@latest',
+//                    snykTokenId: 'snyk-token',
+//                    failOnIssues: false,
+//                    monitorProjectOnBuild: true,
+//                    additionalArguments: '--prune-repeated-subdependencies'
 //                    additionalArguments: '--all-projects --debug'
-
-                )
-                
-            }
-        }
+//
+//                )
+//                
+//            }
+//        }
+//
 
         stage('Run Snyk Code Scan') {
             steps {
@@ -91,4 +92,5 @@ pipeline {
         }
     }
 }
+
 
