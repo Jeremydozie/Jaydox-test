@@ -22,7 +22,8 @@ pipeline {
                     snykTokenId: 'snyk-token',
                     failOnIssues: false,
                     monitorProjectOnBuild: true,
-                    additionalArguments: '--all-projects --debug'
+                    additionalArguments: '--prune-repeated-subdependencies'
+//                    additionalArguments: '--all-projects --debug'
 
                 )
                 
