@@ -78,7 +78,7 @@ pipeline {
 //
 
         
-        stage('Run Snyk IAC Scan') {
+        stage('build && SonarQube analysis') {
 
             steps {
                 withSonarQubeEnv('sonarserver') {
