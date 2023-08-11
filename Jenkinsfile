@@ -77,8 +77,8 @@ pipeline {
 //        }
 //
 
-        
-        stage('build && SonarQube analysis') 
+   
+        stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonarserver') {
                     // Optionally use a Maven environment you've configured already
@@ -102,4 +102,3 @@ pipeline {
         }
     }
 }
-
