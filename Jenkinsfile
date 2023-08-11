@@ -76,7 +76,10 @@ pipeline {
 //            }
 //        }
 //
-        stage('build && SonarQube analysis') {
+
+        
+        stage('Run Snyk IAC Scan') {
+
             steps {
                 withSonarQubeEnv('sonarserver') {
                     // Optionally use a Maven environment you've configured already
@@ -100,3 +103,4 @@ pipeline {
         }
     }
 }
+
