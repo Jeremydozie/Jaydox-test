@@ -30,52 +30,64 @@ pipeline {
 //            }
 //        }
 //
-        stage('Run Snyk Code Scan') {
-            steps {
-                echo 'Testing...' 
-                snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: 'snyk-token',
-                    failOnIssues: false,
-                    monitorProjectOnBuild: true,
-                    additionalArguments: '--code -debug'
-
-                )
-                
-            }
-        }
+//        stage('Run Snyk Code Scan') {
+//            steps {
+//                echo 'Testing...' 
+//                snykSecurity(
+//                    snykInstallation: 'snyk@latest',
+//                    snykTokenId: 'snyk-token',
+//                    failOnIssues: false,
+//                    monitorProjectOnBuild: true,
+//                    additionalArguments: '--code -debug'
+//
+//                )
+//                
+//            }
+//        }
+//
+//        
+//        stage('Run Snyk IAC Scan') {
+//            steps {
+//                echo 'Testing...' 
+//                snykSecurity(
+//                    snykInstallation: 'snyk@latest',
+//                    snykTokenId: 'snyk-token',
+//                    failOnIssues: false,
+//                    monitorProjectOnBuild: true,
+//                    additionalArguments: '--iac --report -debug'
+//
+//                )
+//                
+//            }
+//        }
+//
+//        stage('Run Snyk Container Scan') {
+//            steps {
+//                echo 'Testing...' 
+//                snykSecurity(
+//                    snykInstallation: 'snyk@latest',
+//                    snykTokenId: 'snyk-token',
+//                    failOnIssues: false,
+//                    monitorProjectOnBuild: true,
+//                    additionalArguments: '--container debian -debug'
+//
+//                )
+//                
+//            }
+//        }
+//
 
         
         stage('Run Snyk IAC Scan') {
+
             steps {
-                echo 'Testing...' 
-                snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: 'snyk-token',
-                    failOnIssues: false,
-                    monitorProjectOnBuild: true,
-                    additionalArguments: '--iac --report -debug'
-
-                )
-                
+                withSonarQubeEnv('sonarserver') {
+                    // Optionally use a Maven environment you've configured already
+                        sh 'mvn clean package sonar:sonar'
+                    }
+                }
             }
-        }
 
-        stage('Run Snyk Container Scan') {
-            steps {
-                echo 'Testing...' 
-                snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: 'snyk-token',
-                    failOnIssues: false,
-                    monitorProjectOnBuild: true,
-                    additionalArguments: '--container debian -debug'
-
-                )
-                
-            }
-        }
-        
 
         stage('Push image to ECR...') {
             steps {
@@ -91,5 +103,4 @@ pipeline {
         }
     }
 }
-
 
