@@ -17,6 +17,14 @@ pipeline {
 
         stage('Vulnerability Scanning') {
             steps {
+                echo 'Testing...' 
+                snykSecurity(
+                    snykInstallation: 'snyk@latest',
+                    snykTokenId: 'snyk-token',
+                    failOnIssues: false,
+                    monitorProjectOnBuild: true,
+
+                )    
                 script {
                     def snykCommand = "snyk test --all-projects"
                     def snykResult = sh(script: snykCommand, returnStatus: true)
@@ -29,6 +37,7 @@ pipeline {
             }
         }
 
+    
 
 
 //        stage('Run Snyk 0pen Source scan') {
