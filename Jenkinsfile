@@ -18,7 +18,7 @@ pipeline {
         stage('Vulnerability Scanning') {
             steps {
                 script {
-                    def snykCommand = "snyk test --all-projects --all-sub-projects"
+                    def snykCommand = "snyk test --all-projects"
                     def snykResult = sh(script: snykCommand, returnStatus: true)
                     if (snykResult == 0) {
                         echo "No vulnerabilities found."
